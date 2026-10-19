@@ -2,9 +2,9 @@
 indicator("NQ GEX Levels (Auto-Generated, Free Data Estimate)", overlay=true, max_lines_count=50, max_labels_count=100)
 
 // ============================================================
-// AUTO-GENERATED — 2026-10-16 16:34 UTC
-// Source: QQQ options chain (free/unofficial). Main expiry: 2026-10-16, 0DTE: 2026-10-16
-// QQQ spot at calc time: 715.98 | NQ spot at calc time: 29682.50
+// AUTO-GENERATED — 2026-10-19 18:42 UTC
+// Source: QQQ options chain (free/unofficial). Main expiry: 2026-10-19, 0DTE: 2026-10-19
+// QQQ spot at calc time: 718.99 | NQ spot at calc time: 29727.50
 // FREE-DATA ESTIMATE using the standard public GEX convention
 // (dealers long calls / short puts). NOT SpotGamma's or
 // MenthorQ's proprietary model. "Strength %" = this level's
@@ -12,20 +12,20 @@ indicator("NQ GEX Levels (Auto-Generated, Free Data Estimate)", overlay=true, ma
 // Paste this whole script over the old version each morning.
 // ============================================================
 
-hline(29849.16, title="Call Wall (100%)", color=color.green, linestyle=hline.style_solid, linewidth=2)
-hline(29724.79, title="Put Wall (100%)", color=color.red, linestyle=hline.style_solid, linewidth=2)
-hline(29682.50, title="Gamma Flip (100%)", color=color.orange, linestyle=hline.style_solid, linewidth=2)
-hline(29849.16, title="Call Resistance 0DTE (95%)", color=color.new(color.red, 20), linestyle=hline.style_dashed, linewidth=2)
-hline(29724.79, title="Put Support 0DTE (95%)", color=color.new(color.teal, 20), linestyle=hline.style_dashed, linewidth=2)
-hline(29641.87, title="GEX 1 (92%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
-hline(29683.33, title="GEX 2 (80%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
-hline(29558.96, title="GEX 3 (24%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
-hline(29517.50, title="GEX 4 (21%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
-hline(29434.59, title="GEX 5 (15%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
-hline(29600.42, title="GEX 6 (15%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
-hline(29766.24, title="GEX 7 (14%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
-hline(29901.75, title="1D Expected Move High (68%)", color=color.new(color.yellow, 30), linestyle=hline.style_dashed, linewidth=2)
-hline(29463.25, title="1D Expected Move Low (68%)", color=color.new(color.yellow, 30), linestyle=hline.style_dashed, linewidth=2)
+hline(29769.26, title="Call Wall (100%)", color=color.green, linestyle=hline.style_solid, linewidth=2)
+hline(29562.53, title="Put Wall (100%)", color=color.red, linestyle=hline.style_solid, linewidth=2)
+hline(21719.42, title="Gamma Flip (100%)", color=color.orange, linestyle=hline.style_solid, linewidth=2)
+hline(29769.26, title="Call Resistance 0DTE (95%)", color=color.new(color.red, 20), linestyle=hline.style_dashed, linewidth=2)
+hline(29562.53, title="Put Support 0DTE (95%)", color=color.new(color.teal, 20), linestyle=hline.style_dashed, linewidth=2)
+hline(29727.91, title="GEX 1 (61%)", color=color.new(color.aqua, 10), linestyle=hline.style_dotted, linewidth=2)
+hline(29810.61, title="GEX 2 (20%)", color=color.new(color.aqua, 10), linestyle=hline.style_dotted, linewidth=2)
+hline(29645.22, title="GEX 3 (18%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
+hline(29603.88, title="GEX 4 (14%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
+hline(29686.57, title="GEX 5 (14%)", color=color.new(color.aqua, 10), linestyle=hline.style_dotted, linewidth=2)
+hline(29521.18, title="GEX 6 (8%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
+hline(30100.03, title="GEX 7 (6%)", color=color.new(color.fuchsia, 10), linestyle=hline.style_dotted, linewidth=2)
+hline(29786.02, title="1D Expected Move High (68%)", color=color.new(color.yellow, 30), linestyle=hline.style_dashed, linewidth=2)
+hline(29668.98, title="1D Expected Move Low (68%)", color=color.new(color.yellow, 30), linestyle=hline.style_dashed, linewidth=2)
 
 var label lbl_0 = na
 var label lbl_1 = na
@@ -44,30 +44,30 @@ var label lbl_13 = na
 
 if barstate.islast
     label.delete(lbl_0)
-    lbl_0 := label.new(bar_index + 3, 29849.16, "Call Wall  100%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.green, size=size.small)
+    lbl_0 := label.new(bar_index + 3, 29769.26, "Call Wall  100%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.green, size=size.small)
     label.delete(lbl_1)
-    lbl_1 := label.new(bar_index + 3, 29724.79, "Put Wall  100%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.red, size=size.small)
+    lbl_1 := label.new(bar_index + 3, 29562.53, "Put Wall  100%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.red, size=size.small)
     label.delete(lbl_2)
-    lbl_2 := label.new(bar_index + 3, 29682.50, "Gamma Flip  100%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.orange, size=size.small)
+    lbl_2 := label.new(bar_index + 3, 21719.42, "Gamma Flip  100%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.orange, size=size.small)
     label.delete(lbl_3)
-    lbl_3 := label.new(bar_index + 3, 29849.16, "Call Resistance 0DTE  95%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.red, 20), size=size.small)
+    lbl_3 := label.new(bar_index + 3, 29769.26, "Call Resistance 0DTE  95%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.red, 20), size=size.small)
     label.delete(lbl_4)
-    lbl_4 := label.new(bar_index + 3, 29724.79, "Put Support 0DTE  95%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.teal, 20), size=size.small)
+    lbl_4 := label.new(bar_index + 3, 29562.53, "Put Support 0DTE  95%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.teal, 20), size=size.small)
     label.delete(lbl_5)
-    lbl_5 := label.new(bar_index + 3, 29641.87, "GEX 1  92%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
+    lbl_5 := label.new(bar_index + 3, 29727.91, "GEX 1  61%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.aqua, 10), size=size.small)
     label.delete(lbl_6)
-    lbl_6 := label.new(bar_index + 3, 29683.33, "GEX 2  80%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
+    lbl_6 := label.new(bar_index + 3, 29810.61, "GEX 2  20%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.aqua, 10), size=size.small)
     label.delete(lbl_7)
-    lbl_7 := label.new(bar_index + 3, 29558.96, "GEX 3  24%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
+    lbl_7 := label.new(bar_index + 3, 29645.22, "GEX 3  18%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
     label.delete(lbl_8)
-    lbl_8 := label.new(bar_index + 3, 29517.50, "GEX 4  21%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
+    lbl_8 := label.new(bar_index + 3, 29603.88, "GEX 4  14%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
     label.delete(lbl_9)
-    lbl_9 := label.new(bar_index + 3, 29434.59, "GEX 5  15%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
+    lbl_9 := label.new(bar_index + 3, 29686.57, "GEX 5  14%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.aqua, 10), size=size.small)
     label.delete(lbl_10)
-    lbl_10 := label.new(bar_index + 3, 29600.42, "GEX 6  15%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
+    lbl_10 := label.new(bar_index + 3, 29521.18, "GEX 6  8%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
     label.delete(lbl_11)
-    lbl_11 := label.new(bar_index + 3, 29766.24, "GEX 7  14%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
+    lbl_11 := label.new(bar_index + 3, 30100.03, "GEX 7  6%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.fuchsia, 10), size=size.small)
     label.delete(lbl_12)
-    lbl_12 := label.new(bar_index + 3, 29901.75, "1D Expected Move High  68%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.yellow, 30), size=size.small)
+    lbl_12 := label.new(bar_index + 3, 29786.02, "1D Expected Move High  68%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.yellow, 30), size=size.small)
     label.delete(lbl_13)
-    lbl_13 := label.new(bar_index + 3, 29463.25, "1D Expected Move Low  68%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.yellow, 30), size=size.small)
+    lbl_13 := label.new(bar_index + 3, 29668.98, "1D Expected Move Low  68%", xloc=xloc.bar_index, style=label.style_label_left, color=color.new(color.black, 100), textcolor=color.new(color.yellow, 30), size=size.small)
